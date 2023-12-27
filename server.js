@@ -18,6 +18,10 @@ app.use('/api',adminLoginRouter);
 app.use('/api',lotteriesDataRouter);
 app.use('/api',guessingDigits);
 
+app.get('/', (req, res) => {
+    res.send('Hey this is my API running 🥳')
+})
+
 app.listen(process.env.PORT,()=>{
     console.log("Server is running in port 5000");
 })
