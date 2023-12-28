@@ -19,7 +19,7 @@ app.use('/api',lotteriesDataRouter);
 app.use('/api',guessingDigits);
 
 app.get('/', (req, res) => {
-    res.send('Hey this is my API running 🥳')
+    res.send('Hey, API is running 🥳')
 })
 
 app.listen(process.env.PORT,()=>{
