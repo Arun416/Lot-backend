@@ -17,10 +17,6 @@ const adminLogin = new mongoose.Schema({
     
 })
 
-/* adminLogin.pre("save", async function () {
-    this.password = await bcrypt.hash(this.password, 12);
-  }); */
-
 const adminLogin1 = mongoose.model('admin',adminLogin);
 
 module.exports = adminLogin1;

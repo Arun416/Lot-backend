@@ -21,9 +21,10 @@ const adminLogin = async(req,res)=>{
       if(userData.password!= password){
         return res.status(401).json({ message: 'Invalid Password' });
       }
-      const token = jwt.sign(userData,process.env.ACCESS_TOKEN_SECRET, { expiresIn:'1hr' });
+      let hour = 1;
+      const token = jwt.sign(userData,process.env.ACCESS_TOKEN_SECRET, { expiresIn:`${hour}h` });
 
-      res.status(200).json({success:true, message: 'Login Successfully',token: token,expiresIn:3600,username: userData.username });
+      res.status(200).json({success:true, message: 'Login Successful',token: token,expiresIn: hour * 60 * 60 *1000,username: userData.username });
     }
     catch(err){
       res.status(401).json({
